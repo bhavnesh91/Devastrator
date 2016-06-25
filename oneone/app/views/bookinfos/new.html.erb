@@ -1,0 +1,25 @@
+<p>Enter the Books information details : 
+
+<%= form_for @book do |f|  %>
+<%= f.text_field :book_name %>
+<% end %>
+
+
+<%= link_to "Index", newbooks_path(:id) %>
+<%= form_for @bookinfo, :url => { :action => :create, :id => @book.id } do |f|  %>
+<table>
+	<tr>
+
+		<td>No. of  Pages :</td>
+		<td><%= f.text_field :pages %></td>
+	</tr>
+	<tr>
+		<td>language  :</td>
+		<td><%= f.text_field :language %></td>
+	</tr>
+</table>
+	
+
+	<%= f.submit 'Submit' %>
+
+<% end %>

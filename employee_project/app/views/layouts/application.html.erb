@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EmployeeProject</title>
+ 
+</head>
+<body>
+
+
+<% if !flash[:notice].blank? %>
+	<b><i><%= flash[:notice] %></i></b>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<p>
+	<table>
+		<tr>
+			<th>Author Name</th>
+			<th>Age</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+		<% @authors.each do |emp| %>
+			<td><%= emp.name %></td>
+			<td><%= emp.age %></td>
+			<td>
+				<%= link_to "Edit", {:controller => :books, :action => 'new', :id => emp.id }, :method => :get %> 
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</p>

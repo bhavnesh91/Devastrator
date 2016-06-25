@@ -1,0 +1,53 @@
+
+<p>Existing Employees details : <br />
+
+<%= link_to "Index", new_employee_path %>
+<%= form_for @employee do |f|  %>
+<table>
+	<tr>
+		<td>Eid :</td>
+		<td><%= f.text_field :Eid,:readonly => true %></td>
+	</tr>
+	<tr>
+		<td>Name:</td>
+		<td><%= f.text_field :name,:readonly => true %></td>
+	</tr>
+</table>
+	
+
+	<%= f.submit 'Submit' %>
+
+<% end %>
+</p>
+
+<hr>
+
+<p>
+	<table style="text-align: center;">
+		<tr>
+			<th>Employee ID</th>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+		<% @employees.each do |emp| %>
+			<% if emp.Eid == @employee.Eid %>
+				<%= form_for @employee do |emp|  %>
+					<td style="text-align: center;"><%= emp.text_field :Eid %></td>
+					<td style="text-align: center;"><%= emp.text_field :name %></td>
+					<td>
+						<%= emp.submit 'Save' %>
+					</td>
+				<% end %>
+			<% else %>
+
+			<td><%= emp.Eid %></td>
+			<td><%= emp.name %></td>
+			<td>
+				
+			</td>
+			<% end %>
+		</tr>
+		<% end %>
+	</table>
+</p>

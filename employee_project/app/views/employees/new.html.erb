@@ -1,0 +1,43 @@
+<p>Enter the Employees details : 
+
+<%= link_to "Index", employees_path %>
+<%= form_for @employee do |f|  %>
+<table>
+	<tr>
+		<td>Eid :</td>
+		<td><%= f.text_field :Eid %></td>
+	</tr>
+	<tr>
+		<td>Name:</td>
+		<td><%= f.text_field :name %></td>
+	</tr>
+</table>
+	
+
+	<%= f.submit 'Submit' %>
+
+<% end %>
+</p>
+
+<hr>
+
+<p>
+	<table>
+		<tr>
+			<th>Employee ID</th>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+		<% @employees.each do |emp| %>
+			<td><%= emp.Eid %></td>
+			<td><%= emp.name %></td>
+			<td>
+				<%= link_to "Details", {:controller => :employees, :action => 'show', :id => emp.Eid }, :method => :get %> |
+				<%= link_to "Update", {:controller => :employees, :action => 'edit', :id => emp.Eid }, :method => :get %> |
+				<%= link_to "Delete", {:controller => :employees, :action => 'delete', :id => emp.Eid}, :method => :post %> 
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</p>

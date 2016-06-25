@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("HI");
+$modalBody.html("<%= escape_javascript(render @book) %>");
+$modal.modal();

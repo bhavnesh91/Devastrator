@@ -1,0 +1,25 @@
+<p>Enter the Books details : 
+
+<%= form_for @author do |f|  %>
+<%= f.text_field :name %>
+<% end %>
+
+
+<%= link_to "Index", newbooks_path(:id) %>
+<%= form_for @book, :url => { :action => :create, :id => @author.id } do |f|  %>
+<table>
+	<tr>
+
+		<td>Books Name :</td>
+		<td><%= f.text_field :book_name %></td>
+	</tr>
+	<tr>
+		<td>price  :</td>
+		<td><%= f.text_field :price %></td>
+	</tr>
+</table>
+	
+
+	<%= f.submit 'Submit' %>
+
+<% end %>

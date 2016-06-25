@@ -1,0 +1,18 @@
+<p>
+	<table>
+		<tr>
+			<th>Book Name</th>
+			<th>Pages</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+		<% @bookinfos.each do |emp| %>
+			<td><%= emp.pages %></td>
+			<td><%= emp.language %></td>
+			<td>
+				<%= link_to "back to Author", {:controller => :authors, :action => 'new' }, :method => :get %> 
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</p>

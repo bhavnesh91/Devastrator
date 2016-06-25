@@ -1,0 +1,17 @@
+<p>
+	<table>
+		<tr>
+			<th>Book Name</th>
+			<th>Price</th>
+		</tr>
+		<tr>
+		<% @books.each do |emp| %>
+			<td><%= emp.book_name %></td>
+			<td><%= emp.price %></td>
+			<td>
+				<%= link_to "edit book information", {:controller => :bookinfos, :action => 'new',:id => emp.id}, :method => :get %> 
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</p>

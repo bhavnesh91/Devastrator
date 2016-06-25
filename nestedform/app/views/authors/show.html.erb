@@ -1,0 +1,17 @@
+<p>
+  Below are the books written by <b>Mr . <%= @author.name %></b> 
+</p>
+<ol>
+<% for book in @author.books %>
+  <li>
+    <%= book.title %>
+    
+  </li>
+<% end %>
+</ol>
+
+<p>
+  <%= link_to "Edit", edit_author_path(@author) %> |
+  <%= link_to "Destroy", @author, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", authors_path %>
+</p>
